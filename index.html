@@ -18,6 +18,7 @@
     --teal: #1F6F6F;
     --teal-dim: #1F6F6F33;
     --amber: #B8863B;
+    --orange: #f57900;
     --line: #CBD2CC;
     --max-w: 760px;
   }
@@ -45,15 +46,7 @@
     padding: 0 1.75rem;
   }
 
-  .eyebrow{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-
-  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+  h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: -0.01em; }
 
   /* ---------- Nav ---------- */
   header{
@@ -63,11 +56,16 @@
     border-bottom: 1px solid var(--line);
   }
   header .wrap{
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
     padding-top: 0.9rem; padding-bottom: 0.9rem;
   }
   header .brand{
-    font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600;
+    /*!font-family: 'Fraunces', serif; */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem; 
+    font-weight: 600;
     text-decoration: none;
   }
   nav ul{ list-style: none; display: flex; gap: 1.6rem; }
@@ -75,7 +73,7 @@
     font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
     transition: color 0.2s ease;
   }
-  nav a:hover{ color: var(--teal); }
+  nav a:hover{ color: var(--ink-soft); }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -84,67 +82,12 @@
     overflow: hidden;
   }
   .hero .wrap{ position: relative; z-index: 2; }
-  .hero-graphic{
-    position: absolute;
-    top: 0; right: -8%;
-    width: 62%; max-width: 560px;
-    opacity: 0.9;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero-graphic path.curve{
-    fill: none;
-    stroke: var(--teal);
-    stroke-width: 2;
-    stroke-dasharray: 900;
-    stroke-dashoffset: 900;
-    animation: draw 2.2s ease forwards 0.3s;
-  }
-  .hero-graphic .barrier{
-    stroke: var(--line);
-    stroke-width: 1;
-    stroke-dasharray: 4 5;
-  }
-  .hero-graphic .ball{
-    fill: var(--amber);
-    opacity: 0;
-    animation: fadein 0.6s ease forwards 2.1s;
-  }
-  .hero-graphic text{
-    font-family: 'JetBrains Mono', monospace;
-    fill: var(--ink-soft);
-    font-size: 9px;
-    opacity: 0;
-    animation: fadein 0.6s ease forwards 2.4s;
-  }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  @keyframes fadein { to { opacity: 1; } }
-
   .hero h1{
     font-size: clamp(2.1rem, 5vw, 3rem);
-    max-width: 11ch;
+    max-width: 15ch;
     line-height: 1.08;
     margin: 0.9rem 0 1.1rem;
   }
-  .hero p.lede{
-    max-width: 46ch;
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-  }
-  .hero .links{
-    margin-top: 2rem;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .hero .links a{
-    font-size: 0.9rem;
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 2px;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  .hero .links a:hover{ color: var(--teal); border-color: var(--teal); }
 
   /* ---------- Sections ---------- */
   section.block{
@@ -153,6 +96,12 @@
   }
   section.block h2{
     font-size: 1.5rem;
+    color: var(--ink);
+    margin: 0.5rem 0 1.1rem;
+  }
+  section.block h3{
+    font-size: 1.25rem;
+    color: var(--ink);
     margin: 0.5rem 0 1.1rem;
   }
   section.block .body-text{
@@ -185,8 +134,8 @@
   .research-card h3{ font-size: 1.02rem; margin-bottom: 0.4rem; }
   .research-card p{ font-size: 0.92rem; color: var(--ink-soft); }
 
-  /* ---------- Timeline (thesis / conference) ---------- */
-  .timeline{ margin-top: 1.6rem; }
+  /* ---------- Resume ---------- */
+  .resume{ margin-top: 1.6rem; }
   .t-row{
     display: grid;
     grid-template-columns: 6.5rem 1fr;
@@ -196,13 +145,13 @@
   }
   .t-row:last-child{ border-bottom: none; }
   .t-row .when{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
     padding-top: 0.15rem;
   }
   .t-row .what h3{ font-size: 1rem; margin-bottom: 0.2rem; }
-  .t-row .what p{ font-size: 0.9rem; color: var(--ink-soft); }
+  .t-row .what p{ font-size: 1rem; color: var(--ink-soft); }
 
   /* ---------- Contact ---------- */
   .contact-row{
@@ -217,7 +166,7 @@
     border-bottom: 1px solid var(--ink);
     padding-bottom: 2px;
   }
-  .contact-row a:hover{ color: var(--teal); border-color: var(--teal); }
+  .contact-row a:hover{ color: var(--ink-soft); border-color: var(--ink-soft); }
 
   footer{
     padding: 2.4rem 0 3rem;
@@ -232,13 +181,8 @@
     .t-row{ grid-template-columns: 1fr; gap: 0.2rem; }
   }
 
-  @media (prefers-reduced-motion: reduce){
-    .hero-graphic path.curve, .hero-graphic .ball, .hero-graphic text{ animation: none; opacity: 1; stroke-dashoffset: 0; }
-    .fade-in{ opacity: 1; transform: none; transition: none; }
-  }
-
   a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--teal);
+    outline: 2px solid var(--ink-soft);
     outline-offset: 2px;
   }
 </style>
@@ -247,13 +191,11 @@
 
 <header>
   <div class="wrap">
-    <!-- <a class="brand" href="#top">Felix Shaw-Bell</a> -->
     <a></a>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
-        <!-- <li><a href="#research">Research</a></li> -->
-        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -263,41 +205,16 @@
 <main id="top">
 
   <section class="hero">
-    <!-- double-well potential: a tipping-point landscape 
-    <svg class="hero-graphic" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
-      <line class="barrier" x1="40" y1="120" x2="520" y2="120"/>
-      <path class="curve" d="M 40 60
-               C 110 60, 130 200, 180 200
-               C 230 200, 235 130, 280 128
-               C 325 130, 330 200, 380 200
-               C 430 200, 450 60, 520 60" />
-      <circle class="ball" cx="180" cy="192" r="7"/>
-      <text x="380" y="248">metastable states</text>
-      <text x="255" y="112">barrier</text>
-    </svg>
-  -->
     <div class="wrap">
-      <span class="eyebrow">Applied Mathematics · Auckland, NZ</span>
       <h1>Felix Shaw-Bell</h1>
-      <!--
-      <p class="lede">
-        I work on stochastic dynamical systems and tipping-point phenomena.
-      </p>
-      -->
-      <div class="links">
-        <!--<a href="#research">Research →</a> -->
-        <a href="mailto:fshawbell@gmail.com">Email</a>
-        <a href="Felix_Shaw_Bell_CV_Industry_.pdf" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>
-      </div>
     </div>
   </section>
 
-  <section class="block fade-in" id="about">
+  <section class="block" id="about">
     <div class="wrap">
-      <span class="eyebrow">About</span>
-      <h2>Background</h2>
+      <h2>About</h2>
       <p class="body-text">
-        I am an applied mathematician who has completed a Bachelors and a Masters in Applied
+        I am an applied mathematician who has completed my Bachelors and Masters in Applied
         Mathematics at the University of Auckland. My Masters thesis developed
         methods to approximate the risk of tipping in
         <a href="https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system">tipping-point systems</a>.
@@ -308,76 +225,45 @@
         to tackle the challenges (and opportunities) that the uncertainty and variability 
         of renewables presents.
       </p>
+      <p class="body-text">
+        For a full list of my qualifications and experience, please view my
+          <a href="Felix_Shaw_Bell_CV_Industry_.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>.
+      </p>
     </div>
   </section>
 
-  <!--
-  <section class="block fade-in" id="research">
+  <section class="block" id="resume">
     <div class="wrap">
-      <span class="eyebrow">Research</span>
-      <h2>Areas of focus</h2>
-      <div class="research-grid">
-        <div class="research-card">
-          <span class="eyebrow">Thesis</span>
-          <h3>Fokker-Planck eigenmodes</h3>
-          <p>Spectral approximation methods for the Fokker-Planck operator,
-          used to estimate mean first-passage times and escape rates in
-          bistable stochastic systems.</p>
-        </div>
-        <div class="research-card">
-          <span class="eyebrow">Applied interest</span>
-          <h3>VRE &amp; electricity markets</h3>
-          <p>Treating solar, wind, and demand as correlated stochastic
-          processes; storage as a constrained integrator connected to
-          reflection-type boundary problems.</p>
-        </div>
-        <div class="research-card">
-          <span class="eyebrow">Methods</span>
-          <h3>Stochastic dynamical systems</h3>
-          <p>SDEs, perturbation methods, numerical schemes for stationary
-          and quasi-stationary distributions, tipping-point diagnostics.</p>
-        </div>
-        <div class="research-card">
-          <span class="eyebrow">Looking ahead</span>
-          <h3>PhD search</h3>
-          <p>Actively contacting European research groups working on
-          stochastic control, market design, and renewable uncertainty.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-  <section class="block fade-in" id="timeline">
-    <div class="wrap">
-      <span class="eyebrow">Timeline</span>
-      <h2>Recent work</h2>
-      <div class="timeline">
+      <div class="resume">
+        <h2>Education</h2>
         <div class="t-row">
-          <div class="when">2025–2026</div>
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Jul 2025 – Jul 2026</span>
+            <span>Auckland, NZ</span>
+          </div>
           <div class="what">
-            <h3>Masters Student</h3>
-            <p>Working under the supervision of Professor Graham Donovan, I completed my Masters 
-              of Science in Applied Mathematics with a thesis focused on tipping-point systems. 
-              Specifically the Fokker-Planck equation was studied, for which I developed eigenmode approximations
+            <div style="display: flex; justify-content: space-between;">
+            <span><h3>MSc, Applied Mathematics</h3></span>
+            <span><h3>University of Auckland</h3></span>
+          </div>
+            
+            <p>Working under the supervision of <a href="https://www.math.auckland.ac.nz/~gdon030/">Professor Graham Donovan</a>, 
+              I completed my masters studies with a thesis focused on tipping-point systems. 
+              Specifically, I studied the Fokker-Planck equation, for which I developed eigenmode approximations
               to estimate tipping risk.</p>
           </div>
         </div>
         <div class="t-row">
-          <div class="when">2023-2025</div>
-          <div class="what">
-            <h3>Data Scientist</h3>
-            <p>I spent approximately 18 months (split between full-time and part-time work) 
-              developing machine learning models for 
-              <a href="https://www.shift.com.au/">Shift</a>, an Australian financial company.
-              The models were used to assess credit risk and inform lending decisions.</p>
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Feb 2021 – Nov 2024</span>
+            <span>Auckland, NZ</span>
           </div>
-        </div>
-        <div class="t-row">
-          <div class="when">2021–2024</div>
           <div class="what">
-            <h3>Undergraduate Student</h3>
-            <p>I completed my Bachelor of Science (Hons) in Applied Mathematics at the University of Auckland.
-              During this time I developed a strong foundation in applied mathematics, including 
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3>BSc (Hons), Applied Mathematics</h3></span>
+              <span><h3>University of Auckland</h3></span>
+            </div>
+            <p>During my undergraduate studies I developed a strong foundation in applied mathematics, including 
               courses in differential equations, linear algebra, numerical methods and machine learning.
             </p>
           </div>
@@ -385,15 +271,108 @@
       </div>
     </div>
   </section>
-
-  <section class="block fade-in" id="contact">
+  <section class="block" id="resume">
     <div class="wrap">
-      <span class="eyebrow">Contact</span>
-      <h2>Get in touch</h2>
-      <p class="body-text">
+      <div class="resume">
+        <h2>Experience</h2>
+        <div class="t-row">
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Mar 2026 - Jun 2026</span>
+            <span>Auckland, NZ</span>
+          </div>
+          <div class="what">
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3>Graduate Teaching Assistant</h3></span>
+              <span><h3>University of Auckland</h3></span>
+            </div>
+            <p>I delivered tutorials to classes of 20 to 40 students in first-year 
+              mathematics. The courses included calculus, linear algebra, 
+              and mathematical computing.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Feb 2025 - Aug 2025</span>
+            <span>Sydney, AU (remote)</span>
+          </div>
+          <div class="what">
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3>Data Scientist</h3></span>
+              <span><h3><a href="https://www.shift.com.au/">Shift</a></h3></span>
+            </div>
+            <p>I returned to Shift for a full-time, 6 month contract as a Data Scientist between my 
+              undergraduate and postgraduate studies. 
+              During this time I developed machine learning models to predict credit risk for Shift's lending products.
+                The models were used to assess credit risk and inform lending decisions.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Nov 2024 - Feb 2025</span>
+            <span>Auckland, NZ</span>
+          </div>
+          <div class="what">
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3>Mathematics Research Scholar</h3></span>
+              <span><h3>University of Auckland</h3></span>
+            </div>
+            <p>Worked under Professor Simon Harris and Dr Jesse Goodman to explore 
+              branching processes. Specifically, I investigated coalescing branching 
+              processes, which can be thought of as a type of branching process 
+              going backwards in time.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>Nov 2023 - Nov 2024</span>
+            <span>Sydney, AU (on-site & remote)</span>
+          </div>
+          <div class="what">
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3>Data Analyst Intern</h3></span>
+              <span><h3><a href="https://www.shift.com.au/">Shift</a></h3></span>
+            </div>
+            <p>During my internship at Shift, I built and deployed a 
+              company-specific Python library 
+              providing a rigorous machine learning pipeline and I carried out  
+              feature engineering work to enhance credit risk modelling from 
+              existing datasets. My internship continued in a part-time, remote capacity
+              during the 2024 academic year.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when" style="display: flex; justify-content: space-between;">
+            <span>2019 - 2023</span>
+            <span>Marlborough, Waiheke Island, Auckland, NZ</span>
+          </div>
+          <div class="what">
+            <div style="display: flex; justify-content: space-between;">
+              <span><h3><i>Various wine related roles</i></h3></span>
+            </div>
+            <p>Alongside my mathematical pursuits, I also have an interest in the wine industry (and very 
+              nearly chose this as my career path).
+              I spent one summer working on various vineyards in the Marlborough Wine Region, and another 
+              summer working for <a href="https://stonyridge.com/">Stonyridge Vineyard</a> on Waiheke Island. 
+              After returning to Auckland I worked at Sidart Restaurant (now closed), initially as a commis waiter
+              and later as a seniour waiter and restaurant supervisor. While at Sidart I was exposed to
+              the world of fine dining and wine pairing and had the privilege of working with some exceptional chefs 
+              and sommeliers. During this time I was able to earn my WSET Level 2 Award in Wines from the NZ 
+              School of Food and Wine and included Wine Science in my BSc coursework 
+              at the University of Auckland.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+    <!--<p class="body-text">
         Open to conversations about opportunities in stochastic modeling, renewable
-        energy systems, and electricity market modelling.
-      </p>
+        energy systems and of course wine!
+      </p> -->
       <div class="contact-row">
         <a href="mailto:fshawbell@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/felix-shaw-bell-7b23b51b8/">LinkedIn</a>
@@ -408,15 +387,6 @@
     &copy; 2026 Felix.
   </div>
 </footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
