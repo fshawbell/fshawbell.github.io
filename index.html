@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix — Applied Mathematics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #F1F4F2;
+    --paper-dim: #E7EBE7;
+    --ink: #151A19;
+    --ink-soft: #4B5450;
+    --teal: #1F6F6F;
+    --teal-dim: #1F6F6F33;
+    --amber: #B8863B;
+    --line: #CBD2CC;
+    --max-w: 760px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--teal-dim); }
+
+  a { color: inherit; }
+
+  .wrap{
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.75rem;
+  }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+
+  /* ---------- Nav ---------- */
+  header{
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(241,244,242,0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap{
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.9rem; padding-bottom: 0.9rem;
+  }
+  header .brand{
+    font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600;
+    text-decoration: none;
+  }
+  nav ul{ list-style: none; display: flex; gap: 1.6rem; }
+  nav a{
+    font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
+    transition: color 0.2s ease;
+  }
+  nav a:hover{ color: var(--teal); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    padding: 5.5rem 0 4rem;
+    overflow: hidden;
+  }
+  .hero .wrap{ position: relative; z-index: 2; }
+  .hero-graphic{
+    position: absolute;
+    top: 0; right: -8%;
+    width: 62%; max-width: 560px;
+    opacity: 0.9;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-graphic path.curve{
+    fill: none;
+    stroke: var(--teal);
+    stroke-width: 2;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.2s ease forwards 0.3s;
+  }
+  .hero-graphic .barrier{
+    stroke: var(--line);
+    stroke-width: 1;
+    stroke-dasharray: 4 5;
+  }
+  .hero-graphic .ball{
+    fill: var(--amber);
+    opacity: 0;
+    animation: fadein 0.6s ease forwards 2.1s;
+  }
+  .hero-graphic text{
+    font-family: 'JetBrains Mono', monospace;
+    fill: var(--ink-soft);
+    font-size: 9px;
+    opacity: 0;
+    animation: fadein 0.6s ease forwards 2.4s;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fadein { to { opacity: 1; } }
+
+  .hero h1{
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    max-width: 11ch;
+    line-height: 1.08;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .hero p.lede{
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+  .hero .links{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .hero .links a{
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .hero .links a:hover{ color: var(--teal); border-color: var(--teal); }
+
+  /* ---------- Sections ---------- */
+  section.block{
+    padding: 3.4rem 0;
+    border-top: 1px solid var(--line);
+  }
+  section.block h2{
+    font-size: 1.5rem;
+    margin: 0.5rem 0 1.1rem;
+  }
+  section.block .body-text{
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  section.block .body-text + .body-text{ margin-top: 1rem; }
+
+  .fade-in{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible{ opacity: 1; transform: translateY(0); }
+
+  /* ---------- Research grid ---------- */
+  .research-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+  }
+  .research-card{
+    border: 1px solid var(--line);
+    background: var(--paper-dim);
+    padding: 1.3rem 1.4rem;
+    border-radius: 3px;
+  }
+  .research-card .eyebrow{ display: block; margin-bottom: 0.5rem; }
+  .research-card h3{ font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .research-card p{ font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* ---------- Timeline (thesis / conference) ---------- */
+  .timeline{ margin-top: 1.6rem; }
+  .t-row{
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1.2rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .t-row:last-child{ border-bottom: none; }
+  .t-row .when{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--teal);
+    padding-top: 0.15rem;
+  }
+  .t-row .what h3{ font-size: 1rem; margin-bottom: 0.2rem; }
+  .t-row .what p{ font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* ---------- Contact ---------- */
+  .contact-row{
+    margin-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+  }
+  .contact-row a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .contact-row a:hover{ color: var(--teal); border-color: var(--teal); }
+
+  footer{
+    padding: 2.4rem 0 3rem;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 640px){
+    .research-grid{ grid-template-columns: 1fr; }
+    .hero-graphic{ width: 80%; opacity: 0.55; top: -1rem; }
+    nav ul{ gap: 1rem; }
+    .t-row{ grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-graphic path.curve, .hero-graphic .ball, .hero-graphic text{ animation: none; opacity: 1; stroke-dashoffset: 0; }
+    .fade-in{ opacity: 1; transform: none; transition: none; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Felix</a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <svg class="hero-graphic" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- double-well potential: a tipping-point landscape -->
+      <line class="barrier" x1="40" y1="120" x2="520" y2="120"/>
+      <path class="curve" d="M 40 60
+               C 110 60, 130 200, 180 200
+               C 230 200, 235 130, 280 128
+               C 325 130, 330 200, 380 200
+               C 430 200, 450 60, 520 60" />
+      <circle class="ball" cx="180" cy="192" r="7"/>
+      <text x="380" y="248">metastable states</text>
+      <text x="255" y="112">barrier</text>
+    </svg>
+
+    <div class="wrap">
+      <span class="eyebrow">Applied Mathematics · Auckland, NZ</span>
+      <h1>Modelling systems on the edge of change.</h1>
+      <p class="lede">
+        I work on stochastic dynamical systems and tipping-point phenomena —
+        and I'm now applying that toolkit to variable renewable energy
+        and electricity market uncertainty. Recent University of Auckland
+        graduate, currently searching for a PhD position in Europe.
+      </p>
+      <div class="links">
+        <a href="#research">Research →</a>
+        <a href="mailto:you@example.com">Email</a>
+        <a href="#">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block fade-in" id="about">
+    <div class="wrap">
+      <span class="eyebrow">About</span>
+      <h2>Background</h2>
+      <p class="body-text">
+        I completed a First Class Honours Bachelor's and a Master's in Applied
+        Mathematics at the University of Auckland. My master's thesis developed
+        eigenmode approximations of the Fokker-Planck equation to study
+        tipping-point systems, with a particular focus on Kramers escape rates
+        and the spectral structure of stochastic dynamical systems.
+      </p>
+      <p class="body-text">
+        That work sits at the intersection of stochastic analysis and
+        real-world systems modelling — which is what's drawing me toward
+        variable renewable energy (VRE) integration and electricity market
+        uncertainty for doctoral study. I'm particularly interested in groups
+        working on stochastic control and optimization under uncertainty as
+        applied to power systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="block fade-in" id="research">
+    <div class="wrap">
+      <span class="eyebrow">Research</span>
+      <h2>Areas of focus</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <span class="eyebrow">Thesis</span>
+          <h3>Fokker-Planck eigenmodes</h3>
+          <p>Spectral approximation methods for the Fokker-Planck operator,
+          used to estimate mean first-passage times and escape rates in
+          bistable stochastic systems.</p>
+        </div>
+        <div class="research-card">
+          <span class="eyebrow">Applied interest</span>
+          <h3>VRE &amp; electricity markets</h3>
+          <p>Treating solar, wind, and demand as correlated stochastic
+          processes; storage as a constrained integrator connected to
+          reflection-type boundary problems.</p>
+        </div>
+        <div class="research-card">
+          <span class="eyebrow">Methods</span>
+          <h3>Stochastic dynamical systems</h3>
+          <p>SDEs, perturbation methods, numerical schemes for stationary
+          and quasi-stationary distributions, tipping-point diagnostics.</p>
+        </div>
+        <div class="research-card">
+          <span class="eyebrow">Looking ahead</span>
+          <h3>PhD search</h3>
+          <p>Actively contacting European research groups working on
+          stochastic control, market design, and renewable uncertainty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block fade-in" id="timeline">
+    <div class="wrap">
+      <span class="eyebrow">Timeline</span>
+      <h2>Recent work</h2>
+      <div class="timeline">
+        <div class="t-row">
+          <div class="when">2025–2026</div>
+          <div class="what">
+            <h3>Master's thesis</h3>
+            <p>Eigenmode approximations of the Fokker-Planck equation applied
+            to tipping-point systems, University of Auckland.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when">2025</div>
+          <div class="what">
+            <h3>Conference presentation</h3>
+            <p>Presented research at a New Zealand mathematics postgraduate
+            conference.</p>
+          </div>
+        </div>
+        <div class="t-row">
+          <div class="when">2021–2024</div>
+          <div class="what">
+            <h3>BSc (Hons) &amp; foundations</h3>
+            <p>First Class Honours in Applied Mathematics, University of
+            Auckland.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block fade-in" id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch</h2>
+      <p class="body-text">
+        Open to conversations about PhD opportunities in stochastic methods,
+        energy systems, and electricity market modelling.
+      </p>
+      <div class="contact-row">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Google Scholar</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Felix. Built with plain HTML.
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
