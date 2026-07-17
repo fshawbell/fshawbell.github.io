@@ -84,7 +84,7 @@
   .hero .wrap{ position: relative; z-index: 2; }
   .hero h1{
     font-size: clamp(2.1rem, 5vw, 3rem);
-    max-width: 15ch;
+    max-width: var(--max-w);
     line-height: 1.08;
     margin: 0.9rem 0 1.1rem;
   }
@@ -106,7 +106,7 @@
   }
   section.block .body-text{
     color: var(--ink-soft);
-    max-width: 58ch;
+    max-width: var(--max-w);
   }
   section.block .body-text + .body-text{ margin-top: 1rem; }
 
@@ -114,7 +114,7 @@
   .about{ margin-top: 1.6rem; }
   .t-row{
     display: grid;
-    grid-template-columns: 6.5rem 1fr;
+    grid-template-columns: 7rem 1fr;
     gap: 1.2rem;
     padding: 1.5rem 0 1.5rem;
     border-bottom: 1px solid var(--line);
@@ -126,7 +126,8 @@
     color: var(--ink-soft);
     padding-top: 0.15rem;
   }
-  .t-row .what h3{ font-size: 1rem; margin-bottom: 0.2rem; }
+  .t-row .what{ padding-top: 0.15rem; }
+  .t-row .what h3{ font-size: 1rem; margin-top: 0; margin-bottom: 0.2rem; }
   .t-row .what p{ font-size: 1rem; color: var(--ink-soft); }
 
   /* ---------- Contact ---------- */
@@ -202,12 +203,13 @@
         modelling the effects of variable renewable energy in electricity networks/markets. 
         I'm particularly interested in applying my stochastic modelling knowledge
         to tackle the challenges (and opportunities) that the uncertainty and variability 
-        of renewables presents.
+        of renewables present.
       </p>
       <p class="body-text">
         I have also spent time working in the wine industry, and have a strong interest in wine
         and food. I have worked on vineyards in Marlborough and Waiheke Island, and have also
-        worked in fine dining in Auckland. 
+        worked in fine dining in Auckland. See my <a href="#cellar-list">Cellar List</a> for 
+        more information!
       </p>
       <p class="body-text">
         For a full list of my qualifications and experience, please view my
@@ -218,9 +220,13 @@
     <div class="wrap">
       <h2>Education</h2>
       <div class="t-row">
-        <div class="when" style="display: flex; justify-content: space-between;">
+        <!--<div class="when" style="display: flex; justify-content: space-between;">
           <span>Jul 2025 – Jul 2026</span>
           <span>Auckland, NZ</span>
+        </div> -->
+        <div class="when">
+          Jul 25 - Jul 26 <br.>
+          Auckland, NZ
         </div>
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
@@ -228,16 +234,16 @@
           <span><h3>University of Auckland</h3></span>
         </div>
           
-          <p>Working under the supervision of <a href="https://www.math.auckland.ac.nz/~gdon030/">Professor Graham Donovan</a>, 
-            I completed my masters studies with a thesis focused on tipping-point systems. 
-            Specifically, I studied the Fokker-Planck equation, for which I developed eigenmode approximations
-            to estimate tipping risk.</p>
+        <p>Working under the supervision of <a href="https://www.math.auckland.ac.nz/~gdon030/">Professor Graham Donovan</a>, 
+          I completed my masters studies with a thesis focused on tipping-point systems. 
+          Specifically, I studied the Fokker-Planck equation, for which I developed eigenmode approximations
+          to estimate tipping risk.</p>
         </div>
       </div>
       <div class="t-row">
-        <div class="when" style="display: flex; justify-content: space-between;">
-          <span>Feb 2021 – Nov 2024</span>
-          <span>Auckland, NZ</span>
+        <div class="when">
+          Feb 21 - Nov 24 <br.>
+          Auckland, NZ
         </div>
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
@@ -253,9 +259,9 @@
       <div class="wrap">
       <h2>Experience</h2>
       <div class="t-row">
-        <div class="when" style="display: flex; justify-content: space-between;">
-          <span>Mar 2026 - Jun 2026</span>
-          <span>Auckland, NZ</span>
+        <div class="when">
+          Mar 26 - Jun 26 <br.>
+          Auckland, NZ
         </div>
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
@@ -270,13 +276,13 @@
         </div>
       </div>
       <div class="t-row">
-        <div class="when" style="display: flex; justify-content: space-between;">
-          <span>Nov 2023 - Aug 2025</span>
-          <span>Sydney, AU</span>
+        <div class="when">
+          Nov 23 - Aug 25 <br.>
+          Sydney, AU
         </div>
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
-            <span><h3>Data Scientist/Data Analyst Intern</h3></span>
+            <span><h3>Data Analyst Intern/Data Scientist</h3></span>
             <span><h3><a href="https://www.shift.com.au/">Shift</a></h3></span>
           </div>
           <p>As I came to the end of my undergraduate studies, I started working for 
@@ -289,9 +295,9 @@
         </div>
       </div>
       <div class="t-row">
-        <div class="when" style="display: flex; justify-content: space-between;">
-          <span>Nov 2024 - Feb 2025</span>
-          <span>Auckland, NZ</span>
+        <div class="when">
+          Nov 24 - Feb 25 <br.>
+          Auckland, NZ
         </div>
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
@@ -326,11 +332,11 @@
         I spent one summer working on various vineyards in the Marlborough Wine Region, and another 
         summer working for <a href="https://stonyridge.com/">Stonyridge Vineyard</a> on Waiheke Island. 
         After returning to Auckland I worked at Sidart Restaurant (now closed), initially as a commis waiter
-        and later as a seniour waiter and restaurant supervisor. While at Sidart I was exposed to
+        and later as a senior waiter and restaurant supervisor. While at Sidart I was exposed to
         the world of fine dining and wine pairing and had the privilege of working with some exceptional chefs 
         and sommeliers. During this time I was able to earn my WSET Level 2 Award in Wines from the NZ 
         School of Food and Wine and included wine science in my BSc coursework 
-        at the University of Auckland. See bellow a list of some of my favourite wines that I 
+        at the University of Auckland. See below a list of some of my favourite wines that I 
         have had the pleasure of tasting and enjoying.
       </p>
       <p class="body-text">
