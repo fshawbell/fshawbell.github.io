@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +37,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  ::selection { background: var(--teal-dim); }
-
   a { color: inherit; }
 
   .wrap{
@@ -61,13 +60,7 @@
     justify-content: space-between;
     padding-top: 0.9rem; padding-bottom: 0.9rem;
   }
-  header .brand{
-    /*!font-family: 'Fraunces', serif; */
-    font-family: 'Inter', sans-serif;
-    font-size: 1.05rem; 
-    font-weight: 600;
-    text-decoration: none;
-  }
+
   nav ul{ list-style: none; display: flex; gap: 1.6rem; }
   nav a{
     font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
@@ -78,40 +71,43 @@
   /* ---------- Hero ---------- */
   .hero{
     position: relative;
-    padding: 5.5rem 0 4rem;
+    padding: 4rem 0 4rem;
     overflow: hidden;
   }
   .hero .wrap{ position: relative; z-index: 2; }
   .hero h1{
     font-size: clamp(2.1rem, 5vw, 3rem);
     max-width: var(--max-w);
-    line-height: 1.08;
-    margin: 0.9rem 0 1.1rem;
+    line-height: 1;
+    margin: 0 0 0;
   }
 
   /* ---------- Sections ---------- */
   section.block{
-    padding: 1.5rem 0;
+    padding: 4rem 0 4rem;
     border-top: 1px solid var(--line);
   }
   section.block h2{
     font-size: 1.5rem;
     color: var(--ink);
-    margin: 2.5rem 0 1.1rem;
+    margin: 3rem 0 0;
   }
   section.block h3{
     font-size: 1.25rem;
     color: var(--ink);
-    margin: 0.5rem 0 1.1rem;
+    margin: 2rem 0 0;
   }
   section.block .body-text{
     color: var(--ink-soft);
     max-width: var(--max-w);
+    margin-top: 2rem;
   }
   section.block .body-text + .body-text{ margin-top: 1rem; }
 
-  /* ---------- Resume ---------- */
-  .about{ margin-top: 1.6rem; }
+  section.block > .wrap:first-child h2 {
+    margin-top: 0;
+  }
+
   .t-row{
     display: grid;
     grid-template-columns: 7rem 1fr;
@@ -119,7 +115,10 @@
     padding: 1.5rem 0 1.5rem;
     border-bottom: 1px solid var(--line);
   }
-  .t-row:last-child{ border-bottom: none; }
+  .t-row:last-child{ 
+    border-bottom: none; 
+    padding-bottom: 0;
+  }
   .t-row .when{
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
@@ -151,17 +150,6 @@
     font-size: 0.82rem;
   }
 
-  @media (max-width: 640px){
-    .research-grid{ grid-template-columns: 1fr; }
-    .hero-graphic{ width: 80%; opacity: 0.55; top: -1rem; }
-    nav ul{ gap: 1rem; }
-    .t-row{ grid-template-columns: 1fr; gap: 0.2rem; }
-  }
-
-  a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--ink-soft);
-    outline-offset: 2px;
-  }
 </style>
 </head>
 <body>
