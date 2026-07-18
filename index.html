@@ -78,7 +78,6 @@
   .hero h1{
     font-size: clamp(2.1rem, 5vw, 3rem);
     max-width: var(--max-w);
-    line-height: 1;
     margin: 0 0 0;
   }
 
@@ -100,7 +99,7 @@
   section.block .body-text{
     color: var(--ink-soft);
     max-width: var(--max-w);
-    margin-top: 2rem;
+    margin: 2rem 0 0;
   }
   section.block .body-text + .body-text{ margin-top: 1rem; }
 
@@ -112,7 +111,7 @@
     display: grid;
     grid-template-columns: 7rem 1fr;
     gap: 1.2rem;
-    padding: 1.5rem 0 1.5rem;
+    padding: 2rem 0 2rem;
     border-bottom: 1px solid var(--line);
   }
   .t-row:last-child{ 
@@ -129,6 +128,56 @@
   .t-row .what h3{ font-size: 1rem; margin-top: 0; margin-bottom: 0.2rem; }
   .t-row .what p{ font-size: 1rem; color: var(--ink-soft); }
 
+
+  /* ---------- Wine Notes ---------- */
+  .wine-note {
+    max-width: var(--max-w);
+    margin: 0 0 0;
+    padding: 2rem 0 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .wine-note:last-child{ 
+    border-bottom: none; 
+    padding-bottom: 0;
+  }
+  .wine-note .wine-note__header h3{ font-size: 1rem; margin: 0 0 0 ; }
+
+  .wine-note__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    border-bottom: none; 
+  }
+  .wine-note__name {
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .wine-note__vintage {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .wine-note__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .wine-note__vineyard {
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .wine-note__body {
+    margin-top: 0.4rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
   /* ---------- Contact ---------- */
   .contact-row{
     margin-top: 1.4rem;
@@ -138,16 +187,14 @@
   }
   .contact-row a{
     text-decoration: none;
-    font-size: 0.95rem;
     border-bottom: 1px solid var(--ink);
     padding-bottom: 2px;
   }
-  .contact-row a:hover{ color: var(--ink-soft); border-color: var(--ink-soft); }
-
+  
   footer{
     padding: 2.4rem 0 3rem;
     color: var(--ink-soft);
-    font-size: 0.82rem;
+    font-size: 0.75rem;
   }
 
 </style>
@@ -327,9 +374,89 @@
         at the University of Auckland. See below a list of some of my favourite wines that I 
         have had the pleasure of tasting and enjoying.
       </p>
-      <p class="body-text">
-        <i>Coming soon...</i>
-      </p>
+
+      <article class="wine-note">
+        <header class="wine-note__header">
+          <h3 class="wine-note__name">Babich Sauvignon Blanc</h3>
+          <span class="wine-note__vintage">2020</span>
+        </header>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Marlborough, NZ</span>
+          <span class="wine-note__variety">Sauvignon Blanc</span>
+          <span class="wine-note__tasted">Tasted Late 2020</span>
+        </div>
+
+        <p class="wine-note__body">
+          A classic Sauvignon Blanc in many regards, but one that will always stick with me. 
+          While working in the Marlborough wine region the contracting company I was working for 
+          spent a few weeks at the Babich vineyard. Later that year when the 2020 vintage was released
+          I purchased a few bottles and had the pleasure of tasting it with my friends who had also work on the
+          vineyard with me. 
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <header class="wine-note__header">
+          <h3 class="wine-note__name">Nautilus Albariño</h3>
+          <span class="wine-note__vintage">2020</span>
+        </header>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Marlborough, NZ</span>
+          <span class="wine-note__variety">Albariño</span>
+          <span class="wine-note__tasted">Tasted Mid 2021</span>
+        </div>
+
+        <p class="wine-note__body">
+          Well after I become interested in viticulture and the history of wine,
+          I was still unable to deduce anthing of significance about a given wine during a
+          tasting. The first time that I tasted a wine and I could actually pick out the 
+          individual flavours and aromas was when I tasted this wine. That bright 
+          pineapple note sticks with me to this day.
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <header class="wine-note__header">
+          <h3 class="wine-note__name">Stonyridge 'Airfield'</h3>
+          <span class="wine-note__vintage">2019</span>
+        </header>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Waiheke Island, NZ</span>
+          <span class="wine-note__variety">Bordeaux-style Blend</span>
+          <span class="wine-note__tasted">Tasted Mid 2021</span>
+        </div>
+
+        <p class="wine-note__body">
+          'Airfield' is the second label of Stonyridge Vineyard, and is a Bordeaux-style blend.
+          I was fortunate enough to be gifted a bottle as a leaving present when I finished 
+          my time working at Stonyridge. I remember opening it with my family while on a 
+          winter holiday in Raglan, and it was a very memorable experience. We were enjoying a 
+          hearty lamb roast, to which the wine paired beautifully.
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <header class="wine-note__header">
+          <h3 class="wine-note__name">Bollinger 'La Grande Année'</h3>
+          <span class="wine-note__vintage">2012</span>
+        </header>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Champagne, FR</span>
+          <span class="wine-note__variety">Pinot Noir, Chardonnay</span>
+          <span class="wine-note__tasted">Tasted Early 2023</span>
+        </div>
+
+        <p class="wine-note__body">
+          While working at Sidart Restaurant I had the privilege of tasting several exceptional 
+          wines, but this is the one that sticks with me the most. I first tasted it hastely in the middle of a busy service,
+          but later that evening I was able to enjoy a full glass of it with my colleagues. To this day there
+          is no other wine that I have tasted that has had the same level of complexity and depth of flavour.
+      </article>
+      
     </div>
   </section>
 
