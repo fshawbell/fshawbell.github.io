@@ -60,6 +60,10 @@
     justify-content: space-between;
     padding-top: 0.9rem; padding-bottom: 0.9rem;
   }
+  header .wrap > a {
+    display: flex;
+    align-items: center;
+  }
 
   nav ul{ list-style: none; display: flex; gap: 1.6rem; }
   nav a{
@@ -103,7 +107,7 @@
   }
   section.block .body-text + .body-text{ margin-top: 1rem; }
 
-  section.block > .wrap:first-child h2 {
+  section.block > .wrap h2:first-child {
     margin-top: 0;
   }
 
@@ -180,8 +184,11 @@
 
   /* ---------- Figures ---------- */
   figure {
-    margin: 2rem auto;
+    margin: 3rem 0rem 0rem;
     text-align: center;
+  }
+  section.block > .wrap figure:first-child {
+    margin-top: 0;
   }
   figure img {
     display: block;
@@ -196,6 +203,82 @@
     color: var(--ink-soft);
     text-align: center;
   }
+
+  .marked-image {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .marked-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .marker {
+    position: absolute;
+    transform: translate(-50%, -50%); /* centers marker on the coordinate */
+    width: 0.85rem;
+    height: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-soft);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--paper);
+  }
+
+  .hike-entry {
+    max-width: var(--max-w);
+    margin: 0 0 0;
+    padding: 2rem 0 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .hike-entry:last-child{ 
+    border-bottom: none; 
+    padding-bottom: 0;
+  }
+  /* Reuses the same marker look, but sized for inline text rather than image overlay */
+  .marker--inline {
+    position: static;      /* overrides position: absolute from the image marker */
+    transform: translate(0%, -5%);       /* overrides the translate centering */
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+      
+  .hike-entry__header {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    z-index: 0;
+  }
+  .hike-entry .hike-entry__header h3{ font-size: 1rem; margin: 0 0 0 0;}
+
+  .hike-entry__name {
+    font-size: 1rem;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .hike-entry__location {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+  }
+
+  .hike-entry__body {
+    margin-top: 0.4rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
 
   /* ---------- Contact ---------- */
   .contact-row{
@@ -392,12 +475,88 @@
         <figcaption class="figure-caption">Mount Fitz Roy, Patagonia, AR.</figcaption>
       </figure>
       <h2>Trail Map</h2>
-      <figure class="figure">
-        <img src="images/world.svg" alt="World map, NZ enlarged." style="width: calc(0.8 * var(--max-w)); height: auto;">
-      </figure>
       <p class="body-text">
-        <i>Coming soon...</i>
+        I have been fortunate enough to have had the opportunity to explore some of the most beautiful 
+        landscapes in New Zealand, and even one or two places overseas. 
+        The map below shows some of my favourite tramping experiences, with the 
+        numbers corresponding to the following locations.
       </p>
+      <figure class="figure">
+        <div class="marked-image">
+          <img src="images/world.svg" alt="World map, NZ enlarged." style="width: calc(0.8 * var(--max-w)); height: auto;">
+
+          <span class="marker" style="top: 31%; left: 93%;">1</span>
+          <span class="marker" style="top: 50%; left: 88%;">2</span>
+          <span class="marker" style="top: 64.5%; left: 84%;">3</span>
+          <span class="marker" style="top: 72%; left: 81.5%;">4</span>
+          <span class="marker" style="top: 93%; left: 18.5%;">5</span>
+        </div>
+      </figure>
+
+      <div class="hike-entry", id="#pinnicales">
+          <header class="hike-entry__header">
+            <div class="marker marker--inline">1</div>
+            <h3 class="hike-entry__name">The Pinnacles</h3>
+          </header>
+          <div class="hike-entry__location">Coromandel, NZ</div>
+          <p class="hike-entry__body">
+            Close to Auckland, the Pinnacles are a stunning tramping destination. 
+            It is an overnight tramp, making its way up into the Coromandel Ranges.
+            The sunrise summit of the Pinnacles was a highlight!
+          </p>
+      </div>
+      <div class="hike-entry", id="#heaphy">
+          <header class="hike-entry__header">
+            <div class="marker marker--inline">2</div>
+            <h3 class="hike-entry__name">Heaphy Track</h3>
+          </header>
+          <div class="hike-entry__location">Tasman, NZ</div>
+          <p class="hike-entry__body">
+            A multi-day tramp through the Kahurangi National Park, the Heaphy Track is a 
+            classic New Zealand tramping experience. Along the way I saw Takahe, heard Kiwi,
+            and felt the sandflies. The track is a stunning mixture of forest, river valleys and 
+            coastal scenery.
+          </p>
+      </div>
+      <div class="hike-entry", id="#gillespie_pass">
+          <header class="hike-entry__header">
+            <div class="marker marker--inline">3</div>
+            <h3 class="hike-entry__name">Gillespie Pass Circuit</h3>
+          </header>
+          <div class="hike-entry__location">Otago, NZ</div>
+          <p class="hike-entry__body">
+            A less known tramping destination in the South Island, the Gillespie Pass Circuit 
+            is a multi-day tramp that really tested me. During the time my family was
+            on the track with me, it was raining almost constantly, with the only break in rain
+            coming in the form of snow as we reached the pass. Despite (or perhaps, due to) the difficulties,
+            it remains one of my favourite tramping experiences.
+          </p>
+      </div>
+      <div class="hike-entry", id="#greenstone_caples">
+          <header class="hike-entry__header">
+            <div class="marker marker--inline">4</div>
+            <h3 class="hike-entry__name">Greenstone and Caples Track</h3>
+          </header>
+          <div class="hike-entry__location">Otago, NZ</div>
+          <p class="hike-entry__body">
+            The Greenstone Caples Track takes is split over two beautiful vallies, namely the Greenstone
+            Valley and Caples Valley. The classic South Island bush and long views down these two
+            vallies are stunning.
+          </p>
+      </div>
+      <div class="hike-entry", id="#mt_fitzroy">
+          <header class="hike-entry__header">
+            <div class="marker marker--inline">5</div>
+            <h3 class="hike-entry__name">Mount Fitz Roy</h3>
+          </header>
+          <div class="hike-entry__location">Patagonia, AR</div>
+          <p class="hike-entry__body">
+            I recently had the privellege of travelling to Argentina and exploring Patagoina.
+            An absoolute highlight was an early morning (1am start!) assent to see the sun rise 
+            over the iconic Mount Fitzroy (recognisable as the logo of the Patagonia clothing brang). 
+            The early wakeup was well worth it with the alipine views being absolutely breath-taking.
+          </p>
+      </div>
     </div>
   </section>
 
