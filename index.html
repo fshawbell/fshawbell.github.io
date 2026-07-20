@@ -178,6 +178,25 @@
     line-height: 1.65;
   }
 
+  /* ---------- Figures ---------- */
+  figure {
+    margin: 2rem auto;
+    text-align: center;
+  }
+  figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .figure-caption {
+    margin-top: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
   /* ---------- Contact ---------- */
   .contact-row{
     margin-top: 1.4rem;
@@ -208,6 +227,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#trail-map">Trail Map</a></li>
         <li><a href="#cellar-list">Cellar List</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -225,6 +245,10 @@
 
   <section class="block" id="about">
     <div class="wrap">
+      <figure class="figure">
+        <img src="Felix_Guernica.png" alt="Standing beside a Guernica mural in Madrid, Spain." width="400" height="400">
+        <figcaption class="figure-caption">Guernica (1937) by Pablo Picasso. Madrid, ES, 2024.</figcaption>
+      </figure>
       <h2>About</h2>
       <p class="body-text">
         I am an applied mathematician who has completed my Bachelors and Masters in Applied
@@ -239,6 +263,12 @@
         I'm particularly interested in applying my stochastic modelling knowledge
         to tackle the challenges (and opportunities) that the uncertainty and variability 
         of renewables present.
+      </p>
+      <p class="body-text">
+        Outside of mathematics, I enjoy playing sports and exploring the outdoors. I had the privilege of growing up in an adventurous
+        family, with tramping and camping trips around New Zealand being our preferred family holiday. 
+        See my <a href="#trail-map">Trail Map</a> for 
+        a compilation of some of my favorite tramping experiences.
       </p>
       <p class="body-text">
         I have also spent time working in the wine industry, and have a strong interest in wine
@@ -358,8 +388,25 @@
     </div>
   </section>
 
+  <section class="block" id="trail-map">
+    <div class="wrap">
+      <figure class="figure">
+        <img src="Felix_Patagonia.png" alt="Mount Fitz Roy. Patagonia, Argentina." width="400" height="400">
+        <figcaption class="figure-caption">Mount Fitz Roy. Patagonia, AR, 2025.</figcaption>
+      </figure>
+      <h2>Trail Map</h2>
+      <p class="body-text">
+        <i>Coming soon...</i>
+      </p>
+    </div>
+  </section>
+
   <section class="block" id="cellar-list">
     <div class="wrap">
+      <figure class="figure">
+        <img src="Felix_Marlborough.png" alt="Standing in Marlborough vineyard." width="400" height="400">
+        <figcaption class="figure-caption">Marlborough, NZ, 2019.</figcaption>
+      </figure>
       <h2>Cellar List</h2>
       <p class="body-text">
         Alongside my mathematical pursuits, I also have an interest in the wine (and very 
