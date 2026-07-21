@@ -37,7 +37,17 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: inherit; }
+  a { color: inherit; 
+    transition: color 0.3s ease;
+    }
+  
+  a:hover {
+    color: var(--ink);
+  }
+
+  .marker:hover {
+    background: var(--ink); 
+  }
 
   .wrap{
     max-width: var(--max-w);
@@ -68,9 +78,9 @@
   nav ul{ list-style: none; display: flex; gap: 1.6rem; }
   nav a{
     font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
   }
-  nav a:hover{ color: var(--ink-soft); }
+  nav a:hover{ color: var(--ink); }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -190,6 +200,7 @@
   section.block > .wrap figure:first-child {
     margin-top: 0;
   }
+
   figure img {
     display: block;
     margin: 0 auto;
@@ -233,10 +244,13 @@
     box-shadow: 0 0 0 2px var(--paper);
     text-decoration: none;
     cursor: pointer;
+    transition: background 0.3s ease;
   }
 
   .marker:hover {
-    background: var(--ink); 
+    background: var(--paper); 
+    color: var(--ink-soft);
+    box-shadow: 0 0 0 2px var(--ink-soft)
   }
 
   .hike-entry {
@@ -255,8 +269,11 @@
     transform: translate(0%, -5%);       /* overrides the translate centering */
     margin-right: 0.5rem;
     flex-shrink: 0;
+    cursor: auto;
   }
-      
+    .marker--inline:hover {
+    background: var(--ink-soft); 
+  }
   .hike-entry__header {
     display: flex;
     align-items: center;
@@ -434,7 +451,7 @@
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
             <span><h3>Data Analyst Intern/Data Scientist</h3></span>
-            <span><h3><a href="https://www.shift.com.au/">Shift</a></h3></span>
+            <span><h3>Shift/h3></span>
           </div>
           <p>As I came to the end of my undergraduate studies, I started working for 
             <a href="https://www.shift.com.au/">Shift</a>
