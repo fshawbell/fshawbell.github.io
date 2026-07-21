@@ -37,12 +37,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: inherit; 
-    transition: color 0.3s ease;
+  a { 
+    color: inherit; 
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
     }
   
   a:hover {
     color: var(--ink);
+    text-shadow: 0.25px 0 0 currentColor, -0.25px 0 0 currentColor;
   }
 
   .marker:hover {
@@ -78,9 +80,7 @@
   nav ul{ list-style: none; display: flex; gap: 1.6rem; }
   nav a{
     font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
-    transition: color 0.3s ease;
   }
-  nav a:hover{ color: var(--ink); }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -215,6 +215,32 @@
     text-align: center;
   }
 
+  .image-hover {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    width: 2rem;
+  }
+
+  .image-hover__base,
+  .image-hover__overlay {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-hover__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-hover:hover .image-hover__overlay {
+    opacity: 1;
+  }
+
   .marked-image {
     position: relative;
     display: inline-block;
@@ -273,6 +299,9 @@
   }
     .marker--inline:hover {
     background: var(--ink-soft); 
+    color: var(--paper);
+    box-shadow: 0 0 0 2px var(--paper) 
+
   }
   .hike-entry__header {
     display: flex;
@@ -328,7 +357,12 @@
 
 <header>
   <div class="wrap">
-    <a href="#"><img src="images/letter_F_ink_soft.svg" width="25" height="25"></a>
+    <a href="#">
+      <div class="image-hover">
+        <img src="images/letter_F_ink_soft.svg" alt="Default view" class="image-hover__base">
+        <img src="images/letter_F_ink.svg" alt="Alternate view" class="image-hover__overlay">
+      </div>
+    </a>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -348,7 +382,7 @@
       <h1>Felix Shaw-Bell</h1>
     </div>
   </section>
-
+  
   <section class="block" id="about">
     <div class="wrap">
       <figure class="figure">
@@ -451,7 +485,7 @@
         <div class="what">
           <div style="display: flex; justify-content: space-between;">
             <span><h3>Data Analyst Intern/Data Scientist</h3></span>
-            <span><h3>Shift/h3></span>
+            <span><h3>Shift</h3></span>
           </div>
           <p>As I came to the end of my undergraduate studies, I started working for 
             <a href="https://www.shift.com.au/">Shift</a>
