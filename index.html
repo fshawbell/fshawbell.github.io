@@ -24,7 +24,7 @@
     --max-w: 760px;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; scroll-margin-top: 3rem;}
 
   html { scroll-behavior: smooth; }
 
@@ -231,6 +231,12 @@
     font-weight: 600;
     border-radius: 50%;
     box-shadow: 0 0 0 2px var(--paper);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .marker:hover {
+    background: var(--ink); 
   }
 
   .hike-entry {
@@ -485,15 +491,15 @@
         <div class="marked-image">
           <img src="images/world.svg" alt="World map, NZ enlarged." style="width: calc(0.8 * var(--max-w)); height: auto;">
 
-          <span class="marker" style="top: 31%; left: 93%;">1</span>
-          <span class="marker" style="top: 50%; left: 88%;">2</span>
-          <span class="marker" style="top: 64.5%; left: 84%;">3</span>
-          <span class="marker" style="top: 72%; left: 81.5%;">4</span>
-          <span class="marker" style="top: 93%; left: 18.5%;">5</span>
+          <a href="#pinnicales" class="marker" style="top: 31%; left: 93%;">1</a>
+          <a href="#heaphy" class="marker" style="top: 50%; left: 88%;">2</a>
+          <a href="#gillespie_pass" class="marker" style="top: 64.5%; left: 84%;">3</a>
+          <a href="#greenstone_caples" class="marker" style="top: 72%; left: 81.5%;">4</a>
+          <a href="#mt_fitzroy" class="marker" style="top: 93%; left: 18.5%;">5</a>
         </div>
       </figure>
 
-      <div class="hike-entry", id="#pinnicales">
+      <div class="hike-entry", id="pinnicales">
           <header class="hike-entry__header">
             <div class="marker marker--inline">1</div>
             <h3 class="hike-entry__name">The Pinnacles</h3>
@@ -505,7 +511,7 @@
             The sunrise summit of the Pinnacles was a highlight!
           </p>
       </div>
-      <div class="hike-entry", id="#heaphy">
+      <div class="hike-entry", id="heaphy">
           <header class="hike-entry__header">
             <div class="marker marker--inline">2</div>
             <h3 class="hike-entry__name">Heaphy Track</h3>
@@ -518,7 +524,7 @@
             coastal scenery.
           </p>
       </div>
-      <div class="hike-entry", id="#gillespie_pass">
+      <div class="hike-entry", id="gillespie_pass">
           <header class="hike-entry__header">
             <div class="marker marker--inline">3</div>
             <h3 class="hike-entry__name">Gillespie Pass Circuit</h3>
@@ -532,7 +538,7 @@
             it remains one of my favourite tramping experiences.
           </p>
       </div>
-      <div class="hike-entry", id="#greenstone_caples">
+      <div class="hike-entry", id="greenstone_caples">
           <header class="hike-entry__header">
             <div class="marker marker--inline">4</div>
             <h3 class="hike-entry__name">Greenstone and Caples Track</h3>
@@ -544,7 +550,7 @@
             vallies are stunning.
           </p>
       </div>
-      <div class="hike-entry", id="#mt_fitzroy">
+      <div class="hike-entry", id="mt_fitzroy">
           <header class="hike-entry__header">
             <div class="marker marker--inline">5</div>
             <h3 class="hike-entry__name">Mount Fitz Roy</h3>
