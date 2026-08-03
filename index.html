@@ -39,7 +39,7 @@
       <div class="contact-row">
         <a href="mailto:fshawbell@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/felix-shaw-bell/">LinkedIn</a>
-        <a href="Felix_Shaw_Bell_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>      
+        <a href="/assets/documents/Felix_Shaw_Bell_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>      
       </div>
       <p class="body-text">
         I am an applied mathematician from Auckland, New Zealand. My recent research during my masters developed
@@ -151,11 +151,15 @@
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    &copy; 2026 Felix.
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 
 </body>
 </html>

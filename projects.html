@@ -31,18 +31,36 @@
         <h1>Felix Shaw-Bell</h1>
         <h2 class="subtitle">Projects</h2>
       </div>
+      <figure class="figure">
+        <img src="/assets/images/NZMASP_Felix_editted.png" alt="NZMASP 2025 Conference, Auckland, NZ." width="400" height="400">
+        <figcaption class="figure-caption">NZMASP 2025 Conference, Auckland, NZ.</figcaption>
+      </figure>
       <p class="body-text">
-        <i>Coming soon...</i>
+        Find below links to few summaries of my academic(ish) work. I have included my honour's and master's projects and plan on adding a few more side projects in the future. I hope you enjoy reading about some of my research, projects, and work experiences.
       </p>
+      <div class="card-grid">
+        <a class="card-link" href="/projects/tipping_points.html">
+          <h3>Tipping Point Systems</h3>
+          <p>A summary of my master's project.</p>
+        </a>
+        <a class="card-link" href="/projects/agricultural_nitrogen.html">
+          <h3>Agricultural Nitrogen Modelling</h3>
+          <p>A summary of my honour's project.</p>
+        </a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    &copy; 2026 Felix.
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 
 </body>
 </html>

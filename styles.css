@@ -180,7 +180,7 @@ line-height: 1.65;
 
 /* ---------- Figures ---------- */
 figure {
-margin: 3rem 0rem 0rem;
+margin: 3rem 0rem 3rem;
 text-align: center;
 }
 section.block > .wrap figure:first-child {
@@ -205,7 +205,7 @@ text-align: center;
 position: relative;
 display: inline-block;
 max-width: 100%;
-width: 2rem;
+width: 1.5rem;
 }
 
 .image-hover__base,
@@ -333,7 +333,7 @@ border-bottom: 1px solid var(--ink);
   display: flex;
   flex-direction: column;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .card-link {
   padding: 1.5rem 0 1.5rem;
@@ -359,7 +359,10 @@ border-bottom: 1px solid var(--ink);
 }
 
 footer{
-padding: 2.4rem 0 3rem;
-color: var(--ink-soft);
-font-size: 0.75rem;
+  padding: 2.4rem 0 3rem;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
