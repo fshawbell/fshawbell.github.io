@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Shaw-Bell</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/letter_F_logo_ink.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav-placeholder').innerHTML = html;
+    });
+</script>
+
+<main id="top">
+  <section class="block">
+    <div class="wrap">
+      <div style="text-align: center;">
+        <h1>Felix Shaw-Bell</h1>
+        <h2 class="subtitle">Diversions</h2>
+      </div>
+      <figure class="figure">
+        <img src="/assets/images/Patagonia_horse.png" alt="Mount Fitz Roy. Patagonia, Argentina." width="400" height="400">
+        <figcaption class="figure-caption">El Chalten, Patagonia, AR.</figcaption>
+      </figure>
+      <p class="body-text">
+        Find below a few deep-dives into my non-academic interests and hobbies. I am trying to keep these pages updated with new content, so please check back from time to time. I hope you enjoy reading a little bit more about me!
+      </p>
+      <div class="card-grid">
+        <a class="card-link" href="/diversions/trails.html">
+          <h3>Trail Map</h3>
+          <p>A summary of some of my favourite outdoor experiences.</p>
+        </a>
+        <a class="card-link" href="/diversions/cellar.html">
+          <h3>Cellar</h3>
+          <p>An insight into my interest of the viticulture and wine making.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Felix.
+  </div>
+</footer>
+
+</body>
+</html>

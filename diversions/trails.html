@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Shaw-Bell</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/letter_F_logo_ink.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+
+<script>
+  fetch('../nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav-placeholder').innerHTML = html;
+    });
+</script>
+
+<main id="top">
+
+  <section class="block" id="trail-map">
+    <div class="wrap">
+      <div style="text-align: center;">
+        <h1>Felix Shaw-Bell</h1>
+        <h2 class="subtitle">Trail Map</h2>
+      </div>
+      <figure class="figure">
+        <img src="/assets/images/Mount_Fitzroy_1.png" alt="Mount Fitz Roy. Patagonia, Argentina." width="400" height="400">
+        <figcaption class="figure-caption">Mount Fitz Roy, Patagonia, AR.</figcaption>
+      </figure>
+      <p class="body-text">
+        I had the privilege of growing up in an adventurous family, with tramping and camping trips around New Zealand being our preferred family holiday. As a result, I have been fortunate enough to have had the opportunity to explore some of the most beautiful landscapes in New Zealand, and even one or two places overseas. The map below shows some of my favourite tramping experiences, with the numbers corresponding to the following locations (in no particular order).
+      </p>
+      <figure class="figure">
+        <div class="marked-image">
+          <img src="/assets/images/world.svg" alt="World map, NZ enlarged." style="width: calc(0.8 * var(--max-w)); height: auto;">
+
+          <a href="#pinnicales" class="marker" style="top: 31%; left: 93%;">1</a>
+          <a href="#heaphy" class="marker" style="top: 50%; left: 88%;">2</a>
+          <a href="#gillespie_pass" class="marker" style="top: 64.5%; left: 84%;">3</a>
+          <a href="#greenstone_caples" class="marker" style="top: 72%; left: 81.5%;">4</a>
+          <a href="#mt_fitzroy" class="marker" style="top: 93%; left: 18.5%;">5</a>
+        </div>
+      </figure>
+
+      <div class="hike-entry", id="pinnicales">
+          <div class="hike-entry__title-row">
+            <div class="marker marker--inline">1</div>
+            <h3 class="hike-entry__name">The Pinnacles</h3>
+          </div>
+          <div class="hike-entry__location">Coromandel, NZ</div>
+          <p class="hike-entry__body">
+            Close to Auckland, the Pinnacles are a stunning tramping destination. 
+            It is an overnight tramp, making its way up into the Coromandel Ranges.
+            The sunrise summit of the Pinnacles was a highlight!
+          </p>
+      </div>
+      <div class="hike-entry", id="heaphy">
+          <div class="hike-entry__title-row">
+            <div class="marker marker--inline">2</div>
+            <h3 class="hike-entry__name">Heaphy Track</h3>
+          </div>
+          <div class="hike-entry__location">Tasman, NZ</div>
+          <p class="hike-entry__body">
+            A multi-day tramp through the Kahurangi National Park, the Heaphy Track is a 
+            classic New Zealand tramping experience. Along the way I saw Takahe, heard Kiwi,
+            and felt the sandflies. The track is a stunning mixture of forest, river valleys and 
+            coastal scenery.
+          </p>
+      </div>
+      <div class="hike-entry", id="gillespie_pass">
+          <div class="hike-entry__title-row">
+            <div class="marker marker--inline">3</div>
+            <h3 class="hike-entry__name">Gillespie Pass Circuit</h3>
+          </div>
+          <div class="hike-entry__location">Otago, NZ</div>
+          <p class="hike-entry__body">
+            A less known tramping destination in the South Island, the Gillespie Pass Circuit 
+            is a multi-day tramp that really tested me. During the time my family was
+            on the track with me, it was raining almost constantly, with the only break in rain
+            coming in the form of snow as we reached the pass. Despite (or perhaps, due to) the difficulties,
+            it remains one of my favourite tramping experiences.
+          </p>
+      </div>
+      <div class="hike-entry", id="greenstone_caples">
+          <div class="hike-entry__title-row">
+            <div class="marker marker--inline">4</div>
+            <h3 class="hike-entry__name">Greenstone and Caples Track</h3>
+          </div>
+          <div class="hike-entry__location">Otago, NZ</div>
+          <p class="hike-entry__body">
+            The Greenstone Caples Track is split over two beautiful valleys, namely the Greenstone
+            Valley and Caples Valley. The classic South Island bush and long views down these two
+            vallies are stunning.
+          </p>
+      </div>
+      <div class="hike-entry", id="mt_fitzroy">
+          <div class="hike-entry__title-row">
+            <div class="marker marker--inline">5</div>
+            <h3 class="hike-entry__name">Mount Fitz Roy</h3>
+          </div>
+          <div class="hike-entry__location">Patagonia, AR</div>
+          <p class="hike-entry__body">
+            I recently had the privilege of travelling to Argentina and exploring Patagoina.
+            An absoolute highlight was an early morning (1am start!) assent to see the sun rise 
+            over the iconic Mount Fitz Roy (recognisable as the logo of the Patagonia clothing brand). 
+            The early wakeup was well worth it, with the alpine views being absolutely breath-taking.
+          </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Felix.
+  </div>
+</footer>
+
+</body>
+</html>

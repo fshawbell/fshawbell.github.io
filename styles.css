@@ -1,0 +1,365 @@
+
+:root{
+--paper: #F1F4F2;
+--paper-dim: #E7EBE7;
+--ink: #151A19;
+--ink-soft: #4B5450;
+--teal: #1F6F6F;
+--teal-dim: #1F6F6F33;
+--amber: #B8863B;
+--orange: #f57900;
+--line: #CBD2CC;
+--max-w: 760px;
+--hover-time: 0.3s;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-margin-top: 3rem;}
+
+html { scroll-behavior: smooth; }
+
+body{
+background: var(--paper);
+color: var(--ink);
+font-family: 'Inter', sans-serif;
+line-height: 1.65;
+font-size: 16px;
+-webkit-font-smoothing: antialiased;
+}
+
+a { 
+color: inherit; 
+transition: color var(--hover-time) ease, text-shadow var(--hover-time) ease; 
+}
+
+a:hover {
+color: var(--ink);
+text-shadow: 0.25px 0 0 currentColor, -0.25px 0 0 currentColor;
+}
+
+.marker:hover {
+background: var(--ink); 
+}
+
+.wrap{
+max-width: var(--max-w);
+margin: 0 auto;
+padding: 0 1.75rem;
+}
+
+h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0; }
+
+/* ---------- Nav ---------- */
+header{
+position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+background: rgba(241,244,242,0.88);
+backdrop-filter: blur(6px);
+border-bottom: 1px solid var(--line);
+}
+header .wrap{
+display: flex; 
+align-items: center; 
+justify-content: space-between;
+padding-top: 0.9rem; padding-bottom: 0.9rem;
+}
+header .wrap > a {
+display: flex;
+align-items: center;
+}
+nav ul{ list-style: none; display: flex; gap: 1.6rem; }
+nav a{
+font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
+}
+
+/* ---------- Sections ---------- */
+section.block{
+padding: 4rem 0 4rem;
+border-top: 0px;
+}
+
+section.block h1{
+font-size: clamp(2.1rem, 5vw, 3rem);
+max-width: var(--max-w);
+padding-top: 2rem;
+}
+section.block h2{
+font-size: 1.5rem;
+color: var(--ink);
+margin: 3rem 0 0;
+}
+section.block .subtitle {
+  color: var(--ink);
+  margin-top: 0;
+}
+section.block h3{
+  color: var(--ink);
+  font-size: 1rem; 
+  margin-top: 0; 
+  margin-bottom: 0.2rem; 
+}
+section.block .body-text{
+color: var(--ink-soft);
+max-width: var(--max-w);
+margin: 2rem 0 0;
+}
+section.block .body-text + .body-text{ margin-top: 1rem; }
+
+section.block > .wrap:first-of-type > h2:first-child {
+margin-top: 0;
+}
+
+.t-row{
+display: grid;
+grid-template-columns: 7rem 1fr;
+gap: 1.2rem;
+padding: 2rem 0 2rem;
+border-bottom: 1px solid var(--line);
+}
+.t-row:last-child{ 
+border-bottom: none; 
+padding-bottom: 0;
+}
+.t-row .when{
+font-family: 'Inter', sans-serif;
+font-size: 0.8rem;
+color: var(--ink-soft);
+padding-top: 0.15rem;
+}
+.t-row .what{ padding-top: 0.15rem; }
+.t-row .what h3{ 
+  font-size: 1rem; 
+  margin-top: 0; 
+  margin-bottom: 0.2rem; 
+}
+.t-row .what p{ font-size: 1rem; color: var(--ink-soft); }
+
+
+/* ---------- Wine Notes ---------- */
+.wine-note {
+max-width: var(--max-w);
+margin: 0 0 0;
+padding: 2rem 0 2rem;
+border-bottom: 1px solid var(--line);
+}
+.wine-note:last-child{ 
+border-bottom: none; 
+padding-bottom: 0;
+}
+.wine-note .wine-note__header h3{ font-size: 1rem; margin: 0 0 0 ; }
+
+.wine-note__title-row {
+display: flex;
+justify-content: flex-start;
+margin: 0;
+padding: 0;
+border-bottom: none;
+z-index: 0;
+}
+.wine-note__name {
+font-size: 1rem;
+color: var(--ink);
+margin: 0;
+}
+.wine-note__meta {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-top: 0.4rem;
+font-size: 0.8rem;
+color: var(--ink-soft);
+}
+
+.wine-note__vineyard {
+font-weight: 500;
+color: var(--ink);
+}
+.wine-note__body {
+margin-top: 0.4rem;
+color: var(--ink-soft);
+line-height: 1.65;
+}
+
+/* ---------- Figures ---------- */
+figure {
+margin: 3rem 0rem 0rem;
+text-align: center;
+}
+section.block > .wrap figure:first-child {
+margin-top: 0;
+}
+
+figure img {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+height: auto;
+}
+.figure-caption {
+margin-top: 0.75rem;
+font-family: 'Inter', sans-serif;
+font-size: 0.8rem;
+color: var(--ink-soft);
+text-align: center;
+}
+
+.image-hover {
+position: relative;
+display: inline-block;
+max-width: 100%;
+width: 2rem;
+}
+
+.image-hover__base,
+.image-hover__overlay {
+display: block;
+width: 100%;
+height: auto;
+}
+
+.image-hover__overlay {
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+transition: opacity var(--hover-time) ease;
+}
+
+.image-hover:hover .image-hover__overlay {
+opacity: 1;
+}
+
+.marked-image {
+position: relative;
+display: inline-block;
+max-width: 100%;
+}
+.marked-image img {
+display: block;
+width: 100%;
+height: auto;
+}
+.marker {
+position: absolute;
+transform: translate(-50%, -50%); /* centers marker on the coordinate */
+width: 0.85rem;
+height: 0.85rem;
+display: flex;
+align-items: center;
+justify-content: center;
+background: var(--ink-soft);
+color: var(--paper);
+font-family: 'Inter', sans-serif;
+font-size: 0.8rem;
+font-weight: 600;
+border-radius: 50%;
+box-shadow: 0 0 0 2px var(--paper);
+text-decoration: none;
+cursor: pointer;
+transition: background var(--hover-time) ease;
+}
+
+.marker:hover {
+background: var(--paper); 
+color: var(--ink-soft);
+box-shadow: 0 0 0 2px var(--ink-soft)
+}
+
+.hike-entry {
+max-width: var(--max-w);
+margin: 0 0 0;
+padding: 2rem 0 2rem;
+border-bottom: 1px solid var(--line);
+}
+.hike-entry:last-child{ 
+border-bottom: none; 
+padding-bottom: 0;
+}
+
+.marker--inline {
+position: static;      
+transform: translate(0%, -5%);
+margin-right: 0.5rem;
+flex-shrink: 0;
+cursor: auto;
+}
+.marker--inline:hover {
+background: var(--ink-soft); 
+color: var(--paper);
+box-shadow: 0 0 0 2px var(--paper) 
+
+}
+.hike-entry__title-row {
+display: flex;
+align-items: center;
+margin: 0;
+padding: 0;
+border-bottom: none;
+z-index: 0;
+}
+.hike-entry .hike-entry__title-row h3{ font-size: 1rem; margin: 0 0 0 0;}
+
+.hike-entry__name {
+font-size: 1rem;
+color: var(--ink);
+margin: 0;
+}
+
+.hike-entry__location {
+font-size: 0.8rem;
+color: var(--ink-soft);
+margin-top: 0.4rem;
+}
+
+.hike-entry__body {
+margin-top: 0.4rem;
+color: var(--ink-soft);
+line-height: 1.65;
+}
+
+/* ---------- Contact ---------- */
+.contact-row{
+margin-top: 1.4rem;
+display: flex;
+flex-wrap: wrap;
+gap: 1.8rem;
+justify-content: center
+}
+.contact-row a{
+text-decoration: none;
+border-bottom: 1px solid var(--ink);
+}
+
+/* ---------- Cards ---------- */
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+.card-link {
+  padding: 1.5rem 0 1.5rem;
+  border: none;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: none;
+  display: flex;
+  gap: 1rem;
+  color: var(--ink-soft);
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  transition: transform var(--hover-time) ease, border-color var(--hover-time) ease, background-color var(--hover-time) ease, color var(--hover-time) ease;
+}
+
+.card-link:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.card-link:hover {
+  background: var(--paper-dim);
+  color: var(--ink);
+}
+
+footer{
+padding: 2.4rem 0 3rem;
+color: var(--ink-soft);
+font-size: 0.75rem;
+}

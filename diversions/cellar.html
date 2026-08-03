@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Shaw-Bell</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/letter_F_logo_ink.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+
+<script>
+  fetch('/nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav-placeholder').innerHTML = html;
+    });
+</script>
+
+<main id="top">
+  <section class="block" id="cellar">
+    <div class="wrap">
+      <div style="text-align: center;">
+        <h1>Felix Shaw-Bell</h1>
+        <h2 class="subtitle">Cellar</h2>
+      </div>
+      <figure class="figure">
+        <img src="/assets/images/Marlborough.png" alt="Standing in Marlborough vineyard." width="400" height="400">
+        <figcaption class="figure-caption">Awatere Valley, Marlborough, NZ.</figcaption>
+      </figure>
+      <p class="body-text">
+        Welcome to my Cellar! Alongside my mathematical pursuits, I also have an interest in wine (and very 
+        nearly chose this as my career path) and food.
+        I spent one summer working on various vineyards in the Marlborough Wine Region, and another 
+        summer working for <a href="https://stonyridge.com/">Stonyridge Vineyard</a> on Waiheke Island. 
+        After returning to Auckland I worked at Sidart Restaurant (now closed), initially as a commis waiter
+        and later as a senior waiter and restaurant supervisor. While at Sidart I was exposed to
+        the world of fine dining and wine pairing and had the privilege of working with some exceptional chefs 
+        and sommeliers. During this time I was able to earn my WSET Level 2 Award in Wines from the NZ 
+        School of Food and Wine and included wine science in my BSc coursework 
+        at the University of Auckland. See below a list of some of my favourite wines that I 
+        have had the pleasure of tasting and enjoying.
+      </p>
+
+      <article class="wine-note">
+        <div class="wine-note__title-row">
+          <h3 class="wine-note__name">2020 Babich Sauvignon Blanc</h3>
+        </div>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Marlborough, NZ</span>
+          <span class="wine-note__variety">Sauvignon Blanc</span>
+          <span class="wine-note__tasted">Tasted Late 2020</span>
+        </div>
+
+        <p class="wine-note__body">
+          A classic Sauvignon Blanc in many regards, but one that will always stick with me. 
+          While working in the Marlborough wine region the contracting company I was working for 
+          spent a few weeks at the Babich vineyard. Later that year when the 2020 vintage was released
+          I purchased a few bottles and had the pleasure of tasting it with my friends who had also work on the
+          vineyard with me. 
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <div class="wine-note__title-row">
+          <h3 class="wine-note__name">2020 Nautilus Albariño</h3>
+        </div>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Marlborough, NZ</span>
+          <span class="wine-note__variety">Albariño</span>
+          <span class="wine-note__tasted">Tasted Mid 2021</span>
+        </div>
+
+        <p class="wine-note__body">
+          Well after I become interested in viticulture and the history of wine,
+          I was still unable to deduce anthing of significance about a given wine during a
+          tasting. The first time that I tasted a wine and I could actually pick out the 
+          individual flavours and aromas was when I tasted this wine. That bright 
+          pineapple note sticks with me to this day.
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <div class="wine-note__title-row">
+          <h3 class="wine-note__name">2019 Stonyridge 'Airfield'</h3>
+        </div>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Waiheke Island, NZ</span>
+          <span class="wine-note__variety">Bordeaux-style Blend</span>
+          <span class="wine-note__tasted">Tasted Mid 2021</span>
+        </div>
+
+        <p class="wine-note__body">
+          'Airfield' is the second label of Stonyridge Vineyard, and is a Bordeaux-style blend.
+          I was fortunate enough to be gifted a bottle as a leaving present when I finished 
+          my time working at Stonyridge. I remember opening it with my family while on a 
+          winter holiday in Raglan, and it was a very memorable experience. We were enjoying a 
+          hearty lamb roast, to which the wine paired beautifully.
+        </p>
+      </article>
+
+      <article class="wine-note">
+        <div class="wine-note__title-row">
+          <h3 class="wine-note__name">2012 Bollinger 'La Grande Année'</h3>
+        </div>
+
+        <div class="wine-note__meta">
+          <span class="wine-note__location">Champagne, FR</span>
+          <span class="wine-note__variety">Pinot Noir, Chardonnay</span>
+          <span class="wine-note__tasted">Tasted Early 2023</span>
+        </div>
+
+        <p class="wine-note__body">
+          While working at Sidart Restaurant I had the privilege of tasting several exceptional 
+          wines, but this is the one that sticks with me the most. I first tasted it hastely in the middle of a busy service,
+          but later that evening I was able to enjoy a full glass of it with my colleagues. To this day there
+          is no other wine that I have tasted that has had the same level of complexity and depth of flavour.
+      </article>
+      
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Felix.
+  </div>
+</footer>
+
+</body>
+</html>
